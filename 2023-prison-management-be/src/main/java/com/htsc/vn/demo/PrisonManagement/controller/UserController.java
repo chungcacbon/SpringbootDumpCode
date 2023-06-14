@@ -101,7 +101,7 @@ public class UserController {
         	throw new HtscException(HttpStatus.BAD_REQUEST.value(),"Error to get users");
         }
     }
-    int gg=99;
+    int gg=88;
     @PostMapping("/create")
     public ResponseEntity<?> createUser(@Valid @ModelAttribute UserInput userInput) throws Exception {
         userService.createUser(userInput);
