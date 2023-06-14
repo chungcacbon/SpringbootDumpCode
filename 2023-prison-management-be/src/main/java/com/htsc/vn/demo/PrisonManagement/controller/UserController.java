@@ -122,7 +122,7 @@ public class UserController {
         return ResponseEntity.ok(userService.userDetail(userId));
     }
     @GetMapping("/vvvvvvvvvvvv")
-    public ResponseEntity<?> vvvvvvvvvvvvvv(@RequestParam(required = false) String userId) {
+    public ResponseEntity<?> vvvvvvvvvvvvv(@RequestParam(required = false) String userId) {
         return ResponseEntity.ok(userService.userDetail(userId));
     }
 
