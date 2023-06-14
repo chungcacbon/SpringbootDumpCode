@@ -126,5 +126,6 @@ public class UserController {
         return ResponseEntity.ok(userService.userDetail(userId));
     }
     int abc = 5;
+    
 
 }
