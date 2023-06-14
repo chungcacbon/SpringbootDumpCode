@@ -123,3 +123,23 @@ public class UserController {
     }
 
 }
+
+
+
+
+
+
+
+
+
+ public void myPrivateFunction()
+{
+	System.out.printl("Hello world");
+}
+
+
+
+
+
+
+
