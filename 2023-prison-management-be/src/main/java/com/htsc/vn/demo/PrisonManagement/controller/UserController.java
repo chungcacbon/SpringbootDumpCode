@@ -93,7 +93,7 @@ public class UserController {
                 response.setTotalPages(resultPage.getTotalPages()-1);
                 response.setPageNumber(resultPage.getNumber());
                 response.setPageSize(resultPage.getSize());
-                //sssssssssssssssssssss
+                
                 return ResponseEntity.ok(response);
             } else           	
                 return ResponseEntity.ok(userService.getAllUser());
@@ -121,9 +121,9 @@ public class UserController {
     public ResponseEntity<?> detailUser(@RequestParam(required = false) String userId) {
         return ResponseEntity.ok(userService.userDetail(userId));
     }
-    
-    @GetMapping("/aaa")
-    public ResponseEntity<?> aaa(@RequestParam(required = false) String userId) {
+    @GetMapping("/vvvvvvvvvvvv")
+    public ResponseEntity<?> vvvvvvvvvvvvvv(@RequestParam(required = false) String userId) {
         return ResponseEntity.ok(userService.userDetail(userId));
     }
+
 }
