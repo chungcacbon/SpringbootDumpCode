@@ -121,8 +121,8 @@ public class UserController {
     public ResponseEntity<?> detailUser(@RequestParam(required = false) String userId) {
         return ResponseEntity.ok(userService.userDetail(userId));
     }
-    @GetMapping("/vvvvvvvvvvvv")
-    public ResponseEntity<?> vvvvvvvvvvvvv(@RequestParam(required = false) String userId) {
+    @GetMapping("/ccccccccccc")
+    public ResponseEntity<?> cccccccccccccc(@RequestParam(required = false) String userId) {
         return ResponseEntity.ok(userService.userDetail(userId));
     }
 
