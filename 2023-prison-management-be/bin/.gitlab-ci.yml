@@ -1,0 +1,38 @@
+stages:
+  - build
+  - deploy
+
+maven-build:
+  stage: build
+  script:
+    - mvn package -B
+  artifacts:
+    paths:
+      - target/*.jar
+
+# Deploy: 
+#   stage: deploy
+#   before_script:
+#   - 'command -v ssh-agent >/dev/null || ( apk add --update openssh )' 
+#   - eval $(ssh-agent -s)
+#   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+#   - mkdir -p ~/.ssh
+#   - chmod 700 ~/.ssh
+#   - ssh-keyscan $IP_SERVER >> ~/.ssh/known_hosts
+#   - chmod 644 ~/.ssh/known_hosts
+#   script:
+#     - scp -o StrictHostKeyChecking=no /home/gitlab-runner/builds/VxwUTAqU/0/truong.nv/2023-prison-management-be/target/PrisonManagement-0.0.1-SNAPSHOT.jar ubuntu@192.168.133.247:/opt/tomcat/webapps
+deploy:
+  stage: deploy
+  before_script:
+    - 'command -v sshpass >/dev/null || ( apk add --update sshpass )'
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $IP_SERVER >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+  script:
+    - sshpass -p "$SSH_PASSWORD" scp -o StrictHostKeyChecking=no /home/gitlab-runner/builds/VxwUTAqU/0/truong.nv/2023-prison-management-be/target/PrisonManagement-0.0.1-SNAPSHOT.jar htsc@192.168.133.247:/opt/tomcat/webapps
+#    - cd /home/gitlab-runner/builds/VxwUTAqU/0/truong.nv/2023-prison-management-be
+#    - mvn spring-boot:stop
+#    - mvn spring-boot:run
+
