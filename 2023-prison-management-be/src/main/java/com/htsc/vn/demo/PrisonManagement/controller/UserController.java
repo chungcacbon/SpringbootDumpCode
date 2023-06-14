@@ -123,3 +123,26 @@ public class UserController {
     }
 
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+
+
+ public void myPrivateFunction()
+{
+	System.out.printl("Hello world");
+}
+
+
+
+
+
+
+
+>>>>>>> parent of 37bbe87 (delete All)
