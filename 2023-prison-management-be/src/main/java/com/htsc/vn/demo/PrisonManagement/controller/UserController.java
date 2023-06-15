@@ -125,6 +125,11 @@ public class UserController {
     public ResponseEntity<?> cccccccccccccc(@RequestParam(required = false) String userId) {
         return ResponseEntity.ok(userService.userDetail(userId));
     }
+    
+    @GetMapping("/inside Main branch")
+    public ResponseEntity<?> insideBranch(@RequestParam(required = false) String userId) {
+        return ResponseEntity.ok(userService.userDetail(userId));
+    }
 
 
     
